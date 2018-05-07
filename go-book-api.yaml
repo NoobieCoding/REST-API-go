@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: go-book-api
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: go-book-api
+    spec:
+      containers:
+      - name: go-book-api
+        image: gcr.io/go-book-api/book-api
+        ports:
+        - containerPort: 4545
